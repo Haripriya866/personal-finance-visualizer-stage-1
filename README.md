@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Title
+Personal Finance Visualizer
 
-## Getting Started
+## Objective
+# Personal Finance Visualizer - Stage 1
 
-First, run the development server:
+A simple personal finance tracker built using Next.js, React, shadcn/ui, Recharts, and MongoDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Link: https://personal-finance-visualizer-stage-1-psi.vercel.app/dashboard
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Tech Stack
+Next.js, React, shadcn, Recharts, MongoDB Atlas, 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Functionality
+## Features
 
-## Learn More
+- Add, edit, and delete transactions
+- View transaction list
+- Monthly expenses visualized via bar chart
+- Form validation with React Hook Form and Zod
+  
+## Setup Instructions
+1) Create Project Directory: Create a new directory for your project using the command line: mkdir personal-finance-visualizer && cd personal-finance-visualizer
+   
+2) Initialize Next.js Project: Initialize a Next.js project using npx create-next-app@latest .
 
-To learn more about Next.js, take a look at the following resources:
+3) Install Dependencies: Install necessary dependencies using npm install @radix-ui/react-slot recharts mongoose zod react-hook-form tailwind-merge class-variance-authority and npm install -D prettier-plugin-tailwindcss.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4) Configure shadcn: Initialize shadcn by running npx shadcn-ui@latest init. Follow the prompts to configure your project with the desired styling and components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5) Set up MongoDB: Ensure you have cloud-based MongoDB service like MongoDB Atlas. Obtain the connection string for your MongoDB database. Create a .env.local file in your project root and add MONGODB_URI=<your_mongodb_connection_string>.
 
-## Deploy on Vercel
+6) push the code to Git using the following commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* git init
+* git remote add origin https://github.com/Haripriya866/personal-finance-visualizer-stage-1.git
+* git add -A
+* git commit -m "personal-finance-visualizer stage 1"
+* git branch -M main
+* git push -u origin main
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+7) npm run dev 
+   
+8) Define Transaction Schema (MongoDB): Create a models directory and within it, create a transaction.js file. Define a Mongoose schema for transactions with fields like amount (Number), date (Date), and description (String). Use Zod to ensure type safety and validation.
+ 
+9)  Create API Routes (Next.js): In the app/api directory, create API routes for:
+POST /api/transactions: To create a new transaction.
+GET /api/transactions: To retrieve all transactions.
+PUT /api/transactions/[id]: To update an existing transaction.
+DELETE /api/transactions/[id]: To delete a transaction.
+Use the Mongoose model to interact with MongoDB in these API routes. Handle errors gracefully.
+
+10) Develop Transaction Form (React): Create a React component for adding/editing transactions. This form should include fields for amount, date, and description. Use React Hook Form and Zod for form validation and state management.
+
+11) Develop Transaction List View (React): Create a React component to display a list of transactions. Fetch transaction data from the GET /api/transactions endpoint and render it in a table or list format. Implement the delete functionality, using the DELETE api call.
+
+12) Develop Transaction List View (React): Create a React component to display a list of transactions. Fetch transaction data from the GET /api/transactions endpoint and render it in a table or list format. Implement the delete functionality, using the DELETE api call.
+
+13) Implement Basic Form Validation: Ensure that all form fields (amount, date, description) have appropriate validation.
+
+
+## Resources
+## Design files
+dashboard/page.jsx
+
+
+    
